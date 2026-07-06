@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import type { Product } from "@/lib/data";
 import { products } from "@/lib/data";
 import { ProductCard } from "@/components/site/ProductCard";
 import { useStore } from "@/lib/store";
