@@ -55,7 +55,7 @@ export const Route = createFileRoute("/product/$id")({
 });
 
 function ProductPage() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const { add, toggleWish, wishlist } = useStore();
   const wished = wishlist.includes(product.id);
   const [qty, setQty] = useState(1);
