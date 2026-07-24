@@ -295,10 +295,10 @@ function Home() {
                 </p>
                 <p className="mt-1 max-w-[180px] text-sm font-semibold">{flashProduct.name}</p>
                 <div className="mt-2 flex items-center gap-2">
-                  <span className="text-lg font-bold">${flashProduct.price}</span>
+                  <span className="text-lg font-bold">{formatNPR(flashProduct.price)}</span>
                   {flashProduct.originalPrice && (
                     <span className="text-xs text-muted-foreground line-through">
-                      ${flashProduct.originalPrice}
+                      {formatNPR(flashProduct.originalPrice)}
                     </span>
                   )}
                 </div>
