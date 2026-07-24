@@ -205,7 +205,7 @@ function ProductPage() {
               }}
               className="flex flex-1 items-center justify-center gap-2 rounded-full gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:opacity-95"
             >
-              <ShoppingBag className="h-4 w-4" /> Add to Cart · ${(product.price * qty).toFixed(2)}
+              <ShoppingBag className="h-4 w-4" /> Add to Cart · {formatNPR(product.price * qty)}
             </button>
             <button
               onClick={() => toggleWish(product.id)}
