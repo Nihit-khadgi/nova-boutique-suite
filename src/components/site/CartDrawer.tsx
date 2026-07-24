@@ -2,6 +2,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { useStore, cartTotal } from "@/lib/store";
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { formatNPR } from "@/lib/utils";
 
 export function CartDrawer() {
   const { cartOpen, setCartOpen, items, setQty, remove } = useStore();
