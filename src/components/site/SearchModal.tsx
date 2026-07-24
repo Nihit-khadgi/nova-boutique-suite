@@ -57,7 +57,7 @@ export function SearchModal() {
                         {p.brand} · {p.category}
                       </p>
                     </div>
-                    <span className="text-sm font-semibold">${p.price}</span>
+                    <span className="text-sm font-semibold">{formatNPR(p.price)}</span>
                   </Link>
                 </li>
               ))}
