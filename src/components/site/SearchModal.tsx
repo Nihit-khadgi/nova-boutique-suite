@@ -4,6 +4,7 @@ import { products, categories } from "@/lib/data";
 import { Search, TrendingUp, Clock } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
+import { formatNPR } from "@/lib/utils";
 
 export function SearchModal() {
   const { searchOpen, setSearchOpen } = useStore();
@@ -56,7 +57,7 @@ export function SearchModal() {
                         {p.brand} · {p.category}
                       </p>
                     </div>
-                    <span className="text-sm font-semibold">${p.price}</span>
+                    <span className="text-sm font-semibold">{formatNPR(p.price)}</span>
                   </Link>
                 </li>
               ))}

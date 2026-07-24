@@ -2,6 +2,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { useStore, cartTotal } from "@/lib/store";
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { formatNPR } from "@/lib/utils";
 
 export function CartDrawer() {
   const { cartOpen, setCartOpen, items, setQty, remove } = useStore();
@@ -84,7 +85,7 @@ export function CartDrawer() {
                           </button>
                         </div>
                         <span className="text-sm font-semibold">
-                          ${(i.product.price * i.qty).toFixed(2)}
+                          {formatNPR(i.product.price * i.qty)}
                         </span>
                       </div>
                     </div>
@@ -106,15 +107,15 @@ export function CartDrawer() {
               <dl className="mt-4 space-y-1.5 text-sm">
                 <div className="flex justify-between text-muted-foreground">
                   <dt>Subtotal</dt>
-                  <dd>${subtotal.toFixed(2)}</dd>
+                  <dd>{formatNPR(subtotal)}</dd>
                 </div>
                 <div className="flex justify-between text-muted-foreground">
                   <dt>Shipping</dt>
-                  <dd>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</dd>
+                  <dd>{shipping === 0 ? "Free" : formatNPR(shipping)}</dd>
                 </div>
                 <div className="flex justify-between border-t pt-2 text-base font-semibold">
                   <dt>Total</dt>
-                  <dd>${(subtotal + shipping).toFixed(2)}</dd>
+                  <dd>{formatNPR(subtotal + shipping)}</dd>
                 </div>
               </dl>
               <Link
@@ -125,7 +126,7 @@ export function CartDrawer() {
                 Checkout <ArrowRight className="h-4 w-4" />
               </Link>
               <p className="mt-2 text-center text-xs text-muted-foreground">
-                Free shipping on orders over $100
+                Free shipping on orders over Rs 10,000
               </p>
             </div>
           </>

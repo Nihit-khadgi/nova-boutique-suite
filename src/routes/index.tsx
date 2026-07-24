@@ -23,6 +23,7 @@ import {
   blogPosts,
 } from "@/lib/data";
 import { ProductCard } from "@/components/site/ProductCard";
+import { formatNPR } from "@/lib/utils";
 import { CountdownTimer } from "@/components/site/CountdownTimer";
 import { Counter } from "@/components/site/Counter";
 
@@ -294,10 +295,10 @@ function Home() {
                 </p>
                 <p className="mt-1 max-w-[180px] text-sm font-semibold">{flashProduct.name}</p>
                 <div className="mt-2 flex items-center gap-2">
-                  <span className="text-lg font-bold">${flashProduct.price}</span>
+                  <span className="text-lg font-bold">{formatNPR(flashProduct.price)}</span>
                   {flashProduct.originalPrice && (
                     <span className="text-xs text-muted-foreground line-through">
-                      ${flashProduct.originalPrice}
+                      {formatNPR(flashProduct.originalPrice)}
                     </span>
                   )}
                 </div>

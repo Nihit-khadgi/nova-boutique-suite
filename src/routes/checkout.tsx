@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useStore, cartTotal } from "@/lib/store";
 import { useState } from "react";
 import { Check, CreditCard, Truck, ShieldCheck, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, formatNPR } from "@/lib/utils";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({ meta: [{ title: "Checkout — NovaStore" }] }),
@@ -139,7 +139,7 @@ function Checkout() {
                       <p className="font-medium">{i.product.name}</p>
                       <p className="text-muted-foreground">Qty {i.qty}</p>
                     </div>
-                    <span className="font-semibold">${(i.product.price * i.qty).toFixed(2)}</span>
+                    <span className="font-semibold">{formatNPR(i.product.price * i.qty)}</span>
                   </li>
                 ))}
               </ul>
@@ -175,26 +175,26 @@ function Checkout() {
                 <span className="text-muted-foreground">
                   {i.qty} × {i.product.name}
                 </span>
-                <span>${(i.product.price * i.qty).toFixed(2)}</span>
+                <span>{formatNPR(i.product.price * i.qty)}</span>
               </li>
             ))}
           </ul>
           <dl className="mt-6 space-y-2 border-t pt-4 text-sm">
             <div className="flex justify-between text-muted-foreground">
               <dt>Subtotal</dt>
-              <dd>${subtotal.toFixed(2)}</dd>
+              <dd>{formatNPR(subtotal)}</dd>
             </div>
             <div className="flex justify-between text-muted-foreground">
               <dt>Shipping</dt>
-              <dd>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</dd>
+              <dd>{shipping === 0 ? "Free" : formatNPR(shipping)}</dd>
             </div>
             <div className="flex justify-between text-muted-foreground">
               <dt>Tax</dt>
-              <dd>${tax.toFixed(2)}</dd>
+              <dd>{formatNPR(tax)}</dd>
             </div>
             <div className="flex justify-between border-t pt-3 text-base font-semibold">
               <dt>Total</dt>
-              <dd>${total.toFixed(2)}</dd>
+              <dd>{formatNPR(total)}</dd>
             </div>
           </dl>
         </aside>

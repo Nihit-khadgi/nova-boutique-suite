@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { products, categories, brands } from "@/lib/data";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SlidersHorizontal, ChevronDown } from "lucide-react";
+import { formatNPR } from "@/lib/utils";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
@@ -104,7 +105,7 @@ function Shop() {
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 Max Price
               </p>
-              <span className="text-sm font-semibold">${maxPrice}</span>
+              <span className="text-sm font-semibold">{formatNPR(maxPrice)}</span>
             </div>
             <input
               type="range"
