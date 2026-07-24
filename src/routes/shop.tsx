@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { products, categories, brands } from "@/lib/data";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SlidersHorizontal, ChevronDown } from "lucide-react";
+import { formatNPR } from "@/lib/utils";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
