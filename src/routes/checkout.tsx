@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useStore, cartTotal } from "@/lib/store";
 import { useState } from "react";
 import { Check, CreditCard, Truck, ShieldCheck, ArrowRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, formatNPR } from "@/lib/utils";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({ meta: [{ title: "Checkout — NovaStore" }] }),
