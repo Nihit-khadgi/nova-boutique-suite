@@ -105,7 +105,7 @@ function Shop() {
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 Max Price
               </p>
-              <span className="text-sm font-semibold">${maxPrice}</span>
+              <span className="text-sm font-semibold">{formatNPR(maxPrice)}</span>
             </div>
             <input
               type="range"
