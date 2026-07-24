@@ -23,6 +23,7 @@ import {
   blogPosts,
 } from "@/lib/data";
 import { ProductCard } from "@/components/site/ProductCard";
+import { formatNPR } from "@/lib/utils";
 import { CountdownTimer } from "@/components/site/CountdownTimer";
 import { Counter } from "@/components/site/Counter";
 
