@@ -3,7 +3,7 @@ import { Heart, Eye, ShoppingBag, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useStore } from "@/lib/store";
 import type { Product } from "@/lib/data";
-import { cn } from "@/lib/utils";
+import { cn, formatNPR } from "@/lib/utils";
 
 const badgeStyles: Record<string, string> = {
   NEW: "bg-primary text-primary-foreground",
