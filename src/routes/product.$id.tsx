@@ -117,14 +117,14 @@ function ProductPage() {
           </div>
 
           <div className="mt-6 flex items-baseline gap-3">
-            <span className="font-display text-4xl">${product.price}</span>
+            <span className="font-display text-4xl">{formatNPR(product.price)}</span>
             {product.originalPrice && (
               <>
                 <span className="text-lg text-muted-foreground line-through">
-                  ${product.originalPrice}
+                  {formatNPR(product.originalPrice)}
                 </span>
                 <span className="rounded-full bg-destructive/10 px-2 py-0.5 text-xs font-semibold text-destructive">
-                  Save ${product.originalPrice - product.price}
+                  Save {formatNPR(product.originalPrice - product.price)}
                 </span>
               </>
             )}
