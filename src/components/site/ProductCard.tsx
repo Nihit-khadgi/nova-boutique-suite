@@ -102,10 +102,10 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           <h3 className="line-clamp-1 text-sm font-medium">{product.name}</h3>
         </Link>
         <div className="flex items-center gap-2 pt-1">
-          <span className="text-base font-semibold">${product.price}</span>
+          <span className="text-base font-semibold">{formatNPR(product.price)}</span>
           {product.originalPrice && (
             <span className="text-sm text-muted-foreground line-through">
-              ${product.originalPrice}
+              {formatNPR(product.originalPrice)}
             </span>
           )}
         </div>
