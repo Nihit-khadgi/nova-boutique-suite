@@ -85,7 +85,7 @@ export function CartDrawer() {
                           </button>
                         </div>
                         <span className="text-sm font-semibold">
-                          ${(i.product.price * i.qty).toFixed(2)}
+                          {formatNPR(i.product.price * i.qty)}
                         </span>
                       </div>
                     </div>
